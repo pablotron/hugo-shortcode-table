@@ -7,11 +7,12 @@ Markdown renderer][goldmark].
 
 Features:
 * Emits [CSS][] classes for alignment rather than inline `style`
-  attributes.
-* Table data specified as [front matter][front matter] or [site data][].
+  attributes (no more `unsafe-inline`).
+* Table can be defined as [front matter][front matter] or [site data][].
 * Column tooltips.
-* Cell-specific overrides (alignment, tooltip, markup, etc).
-* Easy to configure emitted classes for a variety of frameworks,
+* Cell-specific overrides (alignment, tooltip, etc).
+* [HTML][] and [Markdown][] markup support.
+* Easy to configure emitted [CSS][] classes for a variety of frameworks,
   including [Bulma][] and [Bootstrap][].
 
 ## Example
@@ -39,14 +40,16 @@ tables:
       - name: "apple"
         text: "red"
       - name: "banana"
-        text: "**yellow**" # markdown
+        text: "**yellow**" # markdown markup
       - name: "grape"
         text: "green"
 ```
 
 Content:
 ```markdown
+{{/* render fruits table */}}
 {{< table "fruits" >}}
+```
 
 ## Installation
 
