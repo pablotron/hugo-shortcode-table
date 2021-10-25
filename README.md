@@ -6,8 +6,9 @@ Replacement for the lackluster table syntax in the default [Hugo
 Markdown renderer][goldmark].
 
 Features:
+* Much more powerful than [Markdown][] table syntax.
 * Emits [CSS][] classes for alignment rather than inline `style`
-  attributes (no more `unsafe-inline`).
+  attributes (no more `style-src unsafe-inline`).
 * Table can be defined as [front matter][front matter] or [site data][].
 * Column tooltips.
 * Cell-specific overrides (alignment, tooltip, etc).
