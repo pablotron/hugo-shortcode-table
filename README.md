@@ -15,6 +15,16 @@ Features:
 * Easy to configure emitted [CSS][] classes for a variety of frameworks,
   including [Bulma][] and [Bootstrap][].
 
+## Installation
+
+To get started:
+
+1. Copy `table.html` to the `layouts/shortcodes` directory.
+2. Add a table definition to your [page front matter][front matter] (see
+   example).
+3. Add a `table` shortcode to your page content which references the
+   table definition from the previous step (see example).
+
 ## Example
 
 Below is a simple example.
@@ -25,7 +35,10 @@ Front matter:
 # ... other front matter omitted ...
 tables:
   fruits:
-    # table columns
+    # table name (optional)
+    name: "Fruits"
+
+    # table columns (required)
     cols: 
       - id: "name"
         name: "Name"
@@ -51,15 +64,54 @@ Content:
 {{< table "fruits" >}}
 ```
 
-## Installation
+Generated [HTML][], with whitespace added:
+```html
+<table class='table' title='Fruits' aria-label='Fruits'>
+  <thead>
+    <tr>
+      <th title='The name of the fruit.' aria-label='The name of the fruit.'>
+        Name
+      </th>
 
-To get started:
+      <th class='has-text-right' title='A brief description of the fruit.' aria-label='A brief description of the fruit.'>
+        Text
+      </th>
+    </tr>
+  </thead>
 
-1. Copy `table.html` to the `layouts/shortcodes` directory.
-2. Add a table definition to your [page front matter][front matter] (see
-   below).
-3. Add a `table` shortcode to your page content which references the
-   table definition from the previous step (see below).
+  <tbody>
+    <tr data-tr_y='0'>
+      <td data-td_x='0' data-td_id='name' title='The name of the fruit.' aria-label='The name of the fruit.'>
+        apple
+      </td>
+
+      <td data-td_x='1' data-td_id='text' class='has-text-right' title='A brief description of the fruit.' aria-label='A brief description of the fruit.'>
+        red
+      </td>
+    </tr>
+
+    <tr data-tr_y='1'>
+      <td data-td_x='0' data-td_id='name' title='The name of the fruit.' aria-label='The name of the fruit.'>
+        banana
+      </td>
+
+      <td data-td_x='1' data-td_id='text' class='has-text-right' title='A brief description of the fruit.' aria-label='A brief description of the fruit.'>
+        <strong>yellow</strong>
+      </td>
+    </tr>
+
+    <tr data-tr_y='2'>
+      <td data-td_x='0' data-td_id='name' title='The name of the fruit.' aria-label='The name of the fruit.'>
+        grape
+      </td>
+
+      <td data-td_x='1' data-td_id='text' class='has-text-right' title='A brief description of the fruit.' aria-label='A brief description of the fruit.'>
+        green
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
 
 ## Documentation
 
