@@ -61,8 +61,10 @@ To get started:
 3. Add a `table` shortcode to your page content which references the
    table definition from the previous step (see below).
 
+## Documentation
+
 See the [Table Shortcode Examples page][table-shortcode-examples] for
-additional documentation and examples.
+full documentation and examples.
 
 [site data]: https://gohugo.io/templates/data-templates/#the-data-folder
   "Site data directory."
